@@ -47,9 +47,9 @@ class LoginViewController: UIViewController {
         
         PFUser.logInWithUsername(inBackground: emailTextField.text!, password: passwordTextField.text!) { (user: PFUser?, error: Error?) in
             if user != nil {
-                self.performSegue(withIdentifier: "ChatRoomViewController", sender: nil)
+                self.performSegue(withIdentifier: "ChatViewController", sender: nil)
             } else {
-                let alertController = UIAlertController(title: "Sorry, Login Failed!", message: "Either email or password is incorrect.", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Sorry, Login Failed!", message: "Email or password is incorrect.", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
